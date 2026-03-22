@@ -30,6 +30,7 @@ const authToggleLink = document.getElementById('auth-toggle-link');
 const authToggleText = document.getElementById('auth-toggle-text');
 const logoutBtn = document.getElementById('logout-btn');
 const authError = document.getElementById('auth-error');
+const authRemember = document.getElementById('auth-remember');
 
 // DOM Elements
 const listEl = document.getElementById('transaction-list');
@@ -851,22 +852,30 @@ authForm.addEventListener('submit', (e) => {
   btn.textContent = 'Please wait...';
   btn.disabled = true;
 
-  const authPromise = isLoginMode 
-    ? auth.signInWithEmailAndPassword(email, password)
-    : auth.createUserWithEmailAndPassword(email, password);
-    
-  authPromise.catch(error => {
-    console.error("Auth Error details:", error);
-    // Specifically handle the 400 Bad Request error typically caused by disabled Email Auth
-    if(error.code === 'auth/operation-not-allowed') {
-        authError.textContent = "Error: Email/Password Authentication is not enabled in your Firebase Console. Please refer to the setup instructions.";
-    } else {
-        authError.textContent = error.message;
-    }
-  }).finally(() => {
-    btn.textContent = originalText;
-    btn.disabled = false;
-  });
+  const persistenceValue = authRemember && authRemember.checked 
+    ? firebase.auth.Auth.Persistence.LOCAL 
+    : firebase.auth.Auth.Persistence.SESSION;
+
+  auth.setPersistence(persistenceValue)
+    .then(() => {
+      const authPromise = isLoginMode 
+        ? auth.signInWithEmailAndPassword(email, password)
+        : auth.createUserWithEmailAndPassword(email, password);
+      return authPromise;
+    })
+    .catch(error => {
+      console.error("Auth Error details:", error);
+      // Specifically handle the 400 Bad Request error typically caused by disabled Email Auth
+      if(error.code === 'auth/operation-not-allowed') {
+          authError.textContent = "Error: Email/Password Authentication is not enabled in your Firebase Console. Please refer to the setup instructions.";
+      } else {
+          authError.textContent = error.message;
+      }
+    })
+    .finally(() => {
+      btn.textContent = originalText;
+      btn.disabled = false;
+    });
 });
 
 logoutBtn.addEventListener('click', () => {
@@ -883,7 +892,14 @@ if (googleSignInBtn) {
     googleSignInBtn.disabled = true;
     authError.textContent = '';
 
-    auth.signInWithPopup(googleProvider)
+    const persistenceValue = authRemember && authRemember.checked 
+      ? firebase.auth.Auth.Persistence.LOCAL 
+      : firebase.auth.Auth.Persistence.SESSION;
+
+    auth.setPersistence(persistenceValue)
+      .then(() => {
+        return auth.signInWithPopup(googleProvider);
+      })
       .catch(error => {
         console.error("Google Sign-In Error details:", error);
         authError.textContent = error.message;
