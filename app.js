@@ -513,7 +513,7 @@ window.removeWallet = async function(id) {
 // Currency Formatter
 const formatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
-  currency: 'USD',
+  currency: 'EUR',
 });
 
 // Add Transaction (Firebase)
@@ -1025,7 +1025,7 @@ function renderIncomeExpenseChart(yearMonth, isLight, textColor) {
           displayColors: false,
           callbacks: {
             label: function(context) {
-               return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(context.parsed.y);
+               return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'EUR' }).format(context.parsed.y);
             }
           }
         }
@@ -1140,7 +1140,7 @@ function renderDashboard() {
                 label += ': ';
               }
               if (context.parsed !== null) {
-                label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(context.parsed);
+                label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'EUR' }).format(context.parsed);
               }
               return label;
             }
