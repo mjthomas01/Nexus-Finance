@@ -1,0 +1,252 @@
+[
+  {
+    "category_id": "housing",
+    "display_name": "Housing",
+    "icon_slug": "home",
+    "subs": [
+      {
+        "category_id": "rent_mortgage",
+        "display_name": "Rent & Mortgage",
+        "icon_slug": "key"
+      },
+      {
+        "category_id": "property_tax",
+        "display_name": "Property Tax",
+        "icon_slug": "file-text"
+      },
+      {
+        "category_id": "home_maintenance",
+        "display_name": "Home Maintenance",
+        "icon_slug": "tool"
+      }
+    ]
+  },
+  {
+    "category_id": "utilities",
+    "display_name": "Utilities",
+    "icon_slug": "zap",
+    "subs": [
+      {
+        "category_id": "electricity",
+        "display_name": "Electricity",
+        "icon_slug": "lightning-bolt"
+      },
+      {
+        "category_id": "water_sewer",
+        "display_name": "Water & Sewer",
+        "icon_slug": "droplet"
+      },
+      {
+        "category_id": "internet_cable",
+        "display_name": "Internet & Cable",
+        "icon_slug": "wifi"
+      },
+      {
+        "category_id": "trash_recycling",
+        "display_name": "Trash & Recycling",
+        "icon_slug": "trash"
+      }
+    ]
+  },
+  {
+    "category_id": "food_dining",
+    "display_name": "Food & Dining",
+    "icon_slug": "restaurant",
+    "subs": [
+      {
+        "category_id": "groceries",
+        "display_name": "Groceries",
+        "icon_slug": "shopping-cart"
+      },
+      {
+        "category_id": "dining_out",
+        "display_name": "Dining Out",
+        "icon_slug": "utensils"
+      },
+      {
+        "category_id": "coffee_shops",
+        "display_name": "Coffee Shops",
+        "icon_slug": "coffee"
+      }
+    ]
+  },
+  {
+    "category_id": "transportation",
+    "display_name": "Transportation",
+    "icon_slug": "car",
+    "subs": [
+      {
+        "category_id": "gas_fuel",
+        "display_name": "Gas & Fuel",
+        "icon_slug": "fuel"
+      },
+      {
+        "category_id": "public_transit",
+        "display_name": "Public Transit",
+        "icon_slug": "train"
+      },
+      {
+        "category_id": "auto_maintenance",
+        "display_name": "Auto Maintenance",
+        "icon_slug": "wrench"
+      },
+      {
+        "category_id": "parking_tolls",
+        "display_name": "Parking & Tolls",
+        "icon_slug": "parking"
+      }
+    ]
+  },
+  {
+    "category_id": "health_fitness",
+    "display_name": "Health & Fitness",
+    "icon_slug": "heart",
+    "subs": [
+      {
+        "category_id": "medical_dental",
+        "display_name": "Medical & Dental",
+        "icon_slug": "plus-square"
+      },
+      {
+        "category_id": "pharmacy",
+        "display_name": "Pharmacy",
+        "icon_slug": "pill"
+      },
+      {
+        "category_id": "gym_memberships",
+        "display_name": "Gym Memberships",
+        "icon_slug": "activity"
+      },
+      {
+        "category_id": "sports_activities",
+        "display_name": "Sports & Activities",
+        "icon_slug": "dribbble"
+      }
+    ]
+  },
+  {
+    "category_id": "entertainment",
+    "display_name": "Entertainment",
+    "icon_slug": "film",
+    "subs": [
+      {
+        "category_id": "movies_theater",
+        "display_name": "Movies & Theater",
+        "icon_slug": "ticket"
+      },
+      {
+        "category_id": "concerts_events",
+        "display_name": "Concerts & Events",
+        "icon_slug": "music"
+      },
+      {
+        "category_id": "hobbies",
+        "display_name": "Hobbies",
+        "icon_slug": "star"
+      },
+      {
+        "category_id": "subscriptions",
+        "display_name": "Subscriptions",
+        "icon_slug": "tv"
+      }
+    ]
+  },
+  {
+    "category_id": "shopping",
+    "display_name": "Shopping",
+    "icon_slug": "shopping-bag",
+    "subs": [
+      {
+        "category_id": "clothing_shoes",
+        "display_name": "Clothing & Shoes",
+        "icon_slug": "scissors"
+      },
+      {
+        "category_id": "electronics_gadgets",
+        "display_name": "Electronics & Gadgets",
+        "icon_slug": "smartphone"
+      },
+      {
+        "category_id": "home_goods",
+        "display_name": "Home Goods",
+        "icon_slug": "package"
+      },
+      {
+        "category_id": "gifts",
+        "display_name": "Gifts",
+        "icon_slug": "gift"
+      }
+    ]
+  },
+  {
+    "category_id": "education",
+    "display_name": "Education",
+    "icon_slug": "book",
+    "subs": [
+      {
+        "category_id": "tuition",
+        "display_name": "Tuition",
+        "icon_slug": "award"
+      },
+      {
+        "category_id": "books_supplies",
+        "display_name": "Books & Supplies",
+        "icon_slug": "book-open"
+      },
+      {
+        "category_id": "student_loans",
+        "display_name": "Student Loans",
+        "icon_slug": "briefcase"
+      }
+    ]
+  },
+  {
+    "category_id": "financial_obligations",
+    "display_name": "Financial Obligations",
+    "icon_slug": "dollar-sign",
+    "subs": [
+      {
+        "category_id": "life_insurance",
+        "display_name": "Life Insurance",
+        "icon_slug": "shield"
+      },
+      {
+        "category_id": "credit_card_payments",
+        "display_name": "Credit Card Payments",
+        "icon_slug": "credit-card"
+      },
+      {
+        "category_id": "taxes",
+        "display_name": "Taxes",
+        "icon_slug": "file-text"
+      },
+      {
+        "category_id": "child_support_alimony",
+        "display_name": "Child Support/Alimony",
+        "icon_slug": "users"
+      }
+    ]
+  },
+  {
+    "category_id": "personal_care",
+    "display_name": "Personal Care",
+    "icon_slug": "smile",
+    "subs": [
+      {
+        "category_id": "hair_salon",
+        "display_name": "Hair & Salon",
+        "icon_slug": "scissors"
+      },
+      {
+        "category_id": "spa_massage",
+        "display_name": "Spa & Massage",
+        "icon_slug": "sunset"
+      },
+      {
+        "category_id": "cosmetics",
+        "display_name": "Cosmetics",
+        "icon_slug": "eye"
+      }
+    ]
+  }
+]
