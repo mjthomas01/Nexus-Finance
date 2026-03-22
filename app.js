@@ -61,6 +61,11 @@ const walletsContainer = document.getElementById('wallets-container');
 const walletSubmitBtn = document.getElementById('wallet-submit-btn');
 const walletCancelBtn = document.getElementById('wallet-cancel-btn');
 
+// Floating Action Button & Modal
+const fabAddBtn = document.getElementById('fab-add-btn');
+const transactionModal = document.getElementById('transaction-modal');
+const closeTransactionModalBtn = document.getElementById('close-transaction-modal-btn');
+
 // Dashboard Tabs & Chart DOM
 const tabTransactions = document.getElementById('tab-transactions');
 const tabDashboard = document.getElementById('tab-dashboard');
@@ -308,6 +313,10 @@ function init() {
   });
   walletForm.addEventListener('submit', addWallet);
   walletCancelBtn.addEventListener('click', resetWalletForm);
+
+  // Transaction Modal
+  fabAddBtn.addEventListener('click', () => transactionModal.classList.remove('hidden'));
+  closeTransactionModalBtn.addEventListener('click', () => transactionModal.classList.add('hidden'));
 
   // Firestore Real-time Listeners
   window.walletUnsubscribe = db.collection("wallets")
@@ -586,6 +595,9 @@ async function addTransaction(e) {
     splitPeopleInput.value = '';
     splitFields.classList.add('hidden');
     
+    // Auto-close the modal
+    transactionModal.classList.add('hidden');
+    
     // Restore button
     btn.innerHTML = originalText;
     btn.disabled = false;
@@ -777,6 +789,24 @@ function updateValues() {
     <h2 style="color: ${globalTotal >= 0 ? 'var(--success)' : 'var(--danger)'}">${formatter.format(globalTotal)}</h2>
   `;
   walletsContainer.insertBefore(globalCard, walletsContainer.firstChild);
+
+  // Add Account Card
+  const addAccountCard = document.createElement('div');
+  addAccountCard.classList.add('card', 'glass');
+  addAccountCard.style.display = 'flex';
+  addAccountCard.style.flexDirection = 'column';
+  addAccountCard.style.alignItems = 'center';
+  addAccountCard.style.justifyContent = 'center';
+  addAccountCard.style.cursor = 'pointer';
+  addAccountCard.style.minHeight = '140px';
+  addAccountCard.innerHTML = `
+    <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--accent-primary); display: flex; align-items: center; justify-content: center; margin-bottom: 0.75rem;">
+      <i data-feather="plus" style="color: white; width: 24px; height: 24px;"></i>
+    </div>
+    <p style="color: var(--text-primary); font-weight: 500; font-size: 0.95rem;">Add account</p>
+  `;
+  addAccountCard.addEventListener('click', () => walletModal.classList.remove('hidden'));
+  walletsContainer.appendChild(addAccountCard);
 
   setTimeout(() => feather.replace(), 0);
 }
